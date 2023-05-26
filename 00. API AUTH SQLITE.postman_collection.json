@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "243aff68-8fa4-430e-80ce-6948ff5b3936",
+		"name": "00. API AUTH SQLITE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "SIGN-UP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"febriansyah032@gmail.com\",\n    \"password\" : \"1\",\n    \"fullname\" : \"Rian\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2003/auth/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2003",
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTIVATE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2003/auth/activate/45bcf761-fb79-11ed-8645-41b405003720",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2003",
+							"path": [
+								"auth",
+								"activate",
+								"45bcf761-fb79-11ed-8645-41b405003720"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SIGN-IN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"febriansyah032@gmail.com\",\n    \"password\" : \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2003/auth/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2003",
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FORGOT-PASSWORD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"febriansyah032@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2003/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2003",
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CHANGE-FORGOT-PASSWORD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"febriansyah032@gmail.com\",\n    \"new_password\" : \"2\",\n    \"code\" : \"grfuna\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2003/auth/change-forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2003",
+							"path": [
+								"auth",
+								"change-forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CHANGE-PASSWORD",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGIzYzJjOTAtZmI3Ny0xMWVkLTljZDgtNDExNzlkODRmMzUxIiwiZW1haWwiOiJmZWJyaWFuc3lhaDAzMkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IlJpYW4iLCJpYXQiOjE2ODUwNzI3MTUsImV4cCI6MTcxNjYwODcxNX0.HhxJ5N5MGkNawQPCWZRRaAdPANOANWyJS2_VbtFL1Sw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"new_password\" : \"2\",\n    \"confirm_new_password\" : \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2003/auth/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2003",
+							"path": [
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT-ACCOUNT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGIzYzJjOTAtZmI3Ny0xMWVkLTljZDgtNDExNzlkODRmMzUxIiwiZW1haWwiOiJmZWJyaWFuc3lhaDAzMkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IlJpYW4iLCJpYXQiOjE2ODUwNzI3MTUsImV4cCI6MTcxNjYwODcxNX0.HhxJ5N5MGkNawQPCWZRRaAdPANOANWyJS2_VbtFL1Sw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullname\" : \"OKESIP\",\n    \"email\" : \"febriansyah032@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2003/auth/edit-account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2003",
+							"path": [
+								"auth",
+								"edit-account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CHAT",
+			"item": [
+				{
+					"name": "LIST USER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGIzYzJjOTAtZmI3Ny0xMWVkLTljZDgtNDExNzlkODRmMzUxIiwiZW1haWwiOiJmZWJyaWFuc3lhaDAzMkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6Ik9LRVNJUCIsImlhdCI6MTY4NTA3MzMzMCwiZXhwIjoxNzE2NjA5MzMwfQ.Bir7FdYRJQ0xH1ORLmpT34I1muj8hFY958Uc26M81no",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2003/chat/list-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2003",
+							"path": [
+								"chat",
+								"list-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST CHAT USER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGIzYzJjOTAtZmI3Ny0xMWVkLTljZDgtNDExNzlkODRmMzUxIiwiZW1haWwiOiJmZWJyaWFuc3lhaDAzMkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6Ik9LRVNJUCIsImlhdCI6MTY4NTA3MzMzMCwiZXhwIjoxNzE2NjA5MzMwfQ.Bir7FdYRJQ0xH1ORLmpT34I1muj8hFY958Uc26M81no",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"to_user_id\" : \"45bcf760-fb79-11ed-8645-41b405003720\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2003/chat/list-chat-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2003",
+							"path": [
+								"chat",
+								"list-chat-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SEND MESSAGE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGIzYzJjOTAtZmI3Ny0xMWVkLTljZDgtNDExNzlkODRmMzUxIiwiZW1haWwiOiJmZWJyaWFuc3lhaDAzMkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6Ik9LRVNJUCIsImlhdCI6MTY4NTA3MzMzMCwiZXhwIjoxNzE2NjA5MzMwfQ.Bir7FdYRJQ0xH1ORLmpT34I1muj8hFY958Uc26M81no",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"to_user_id\" : \"45bcf760-fb79-11ed-8645-41b405003720\",\r\n    \"message\" : \"Hi\",\r\n    \"file\" : \"\",\r\n    \"created_at\" : \"2023-05-26 11:01:01\",\r\n    \"time_zone\" : \"+07:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2003/chat/send-message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2003",
+							"path": [
+								"chat",
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE MESSAGE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "xxxx",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"chat_id\" : \"\",\r\n    \"deleted_at\" : \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2003/chat/delete-message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2003",
+							"path": [
+								"chat",
+								"delete-message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

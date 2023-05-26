@@ -1,0 +1,586 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "00. API AUTH SQLITE",
+    "contact": {}
+  },
+  "host": "api-auth.febriansyah.dev",
+  "basePath": "/",
+  "securityDefinitions": {},
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/auth/sign-up": {
+      "post": {
+        "summary": "SIGN-UP",
+        "tags": [
+          "AUTH"
+        ],
+        "operationId": "SIGN-UP",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SIGN-UP-REQUEST"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/activate/45bcf761-fb79-11ed-8645-41b405003720": {
+      "get": {
+        "summary": "ACTIVATE",
+        "tags": [
+          "AUTH"
+        ],
+        "operationId": "ACTIVATE",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/sign-in": {
+      "post": {
+        "summary": "SIGN-IN",
+        "tags": [
+          "AUTH"
+        ],
+        "operationId": "SIGN-IN",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SIGN-IN-REQUEST"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/forgot-password": {
+      "post": {
+        "summary": "FORGOT-PASSWORD",
+        "tags": [
+          "AUTH"
+        ],
+        "operationId": "FORGOT-PASSWORD",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FORGOT-PASSWORD-REQUEST"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/change-forgot-password": {
+      "post": {
+        "summary": "CHANGE-FORGOT-PASSWORD",
+        "tags": [
+          "AUTH"
+        ],
+        "operationId": "CHANGE-FORGOT-PASSWORD",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CHANGE-FORGOT-PASSWORD-REQUEST"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/change-password": {
+      "post": {
+        "summary": "CHANGE-PASSWORD",
+        "tags": [
+          "AUTH"
+        ],
+        "operationId": "CHANGE-PASSWORD",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CHANGE-PASSWORD-REQUEST"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/auth/edit-account": {
+      "post": {
+        "summary": "EDIT-ACCOUNT",
+        "tags": [
+          "AUTH"
+        ],
+        "operationId": "EDIT-ACCOUNT",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EDIT-ACCOUNT-REQUEST"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/chat/list-user": {
+      "post": {
+        "summary": "LIST USER",
+        "tags": [
+          "CHAT"
+        ],
+        "operationId": "LISTUSER",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/chat/list-chat-user": {
+      "post": {
+        "summary": "LIST CHAT USER",
+        "tags": [
+          "CHAT"
+        ],
+        "operationId": "LISTCHATUSER",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LISTCHATUSERREQUEST"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/chat/send-message": {
+      "post": {
+        "summary": "SEND MESSAGE",
+        "tags": [
+          "CHAT"
+        ],
+        "operationId": "SENDMESSAGE",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SENDMESSAGEREQUEST"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/chat/delete-message": {
+      "post": {
+        "summary": "DELETE MESSAGE",
+        "tags": [
+          "CHAT"
+        ],
+        "operationId": "DELETEMESSAGE",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DELETEMESSAGEREQUEST"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "definitions": {
+    "SIGN-UP-REQUEST": {
+      "title": "SIGN-UP-REQUEST",
+      "example": {
+        "email": "febriansyah032@gmail.com",
+        "password": "1",
+        "fullname": "Rian"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "fullname": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password",
+        "fullname"
+      ]
+    },
+    "SIGN-IN-REQUEST": {
+      "title": "SIGN-IN-REQUEST",
+      "example": {
+        "email": "febriansyah032@gmail.com",
+        "password": "2"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "FORGOT-PASSWORD-REQUEST": {
+      "title": "FORGOT-PASSWORD-REQUEST",
+      "example": {
+        "email": "febriansyah032@gmail.com"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email"
+      ]
+    },
+    "CHANGE-FORGOT-PASSWORD-REQUEST": {
+      "title": "CHANGE-FORGOT-PASSWORD-REQUEST",
+      "example": {
+        "email": "febriansyah032@gmail.com",
+        "new_password": "2",
+        "code": "grfuna"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "new_password": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "new_password",
+        "code"
+      ]
+    },
+    "CHANGE-PASSWORD-REQUEST": {
+      "title": "CHANGE-PASSWORD-REQUEST",
+      "example": {
+        "new_password": "2",
+        "confirm_new_password": "2"
+      },
+      "type": "object",
+      "properties": {
+        "new_password": {
+          "type": "string"
+        },
+        "confirm_new_password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "new_password",
+        "confirm_new_password"
+      ]
+    },
+    "EDIT-ACCOUNT-REQUEST": {
+      "title": "EDIT-ACCOUNT-REQUEST",
+      "example": {
+        "fullname": "OKESIP",
+        "email": "febriansyah032@gmail.com"
+      },
+      "type": "object",
+      "properties": {
+        "fullname": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fullname",
+        "email"
+      ]
+    },
+    "LISTCHATUSERREQUEST": {
+      "title": "LISTCHATUSERREQUEST",
+      "example": {
+        "to_user_id": "45bcf760-fb79-11ed-8645-41b405003720"
+      },
+      "type": "object",
+      "properties": {
+        "to_user_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "to_user_id"
+      ]
+    },
+    "SENDMESSAGEREQUEST": {
+      "title": "SENDMESSAGEREQUEST",
+      "example": {
+        "to_user_id": "45bcf760-fb79-11ed-8645-41b405003720",
+        "message": "Hi",
+        "file": "",
+        "created_at": "2023-05-26 11:01:01",
+        "time_zone": "+07:00"
+      },
+      "type": "object",
+      "properties": {
+        "to_user_id": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "time_zone": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "to_user_id",
+        "message",
+        "file",
+        "created_at",
+        "time_zone"
+      ]
+    },
+    "DELETEMESSAGEREQUEST": {
+      "title": "DELETEMESSAGEREQUEST",
+      "example": {
+        "chat_id": "",
+        "deleted_at": ""
+      },
+      "type": "object",
+      "properties": {
+        "chat_id": {
+          "type": "string"
+        },
+        "deleted_at": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "chat_id",
+        "deleted_at"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "AUTH"
+    },
+    {
+      "name": "CHAT"
+    }
+  ]
+}
