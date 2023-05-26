@@ -13,6 +13,7 @@ var jwt = require("jsonwebtoken");
 
 /**Helpers*/
 const help = require("../helper");
+const so = require("../socket");
 
 module.exports = {
     signUp: async (req, res) => {
@@ -130,6 +131,9 @@ module.exports = {
             var token = jwt.sign({ user_id: cek.user_id, email: cek.email, fullname : cekD.fullname }, process.env.JWT_KEY, {
                 expiresIn: "365d",
             });
+            
+            so.setSocketUser(req, cek.user_id);
+
             res.send({
                 status: true,
                 remarks: "Successfuly sign in",
