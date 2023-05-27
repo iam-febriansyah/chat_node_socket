@@ -6,7 +6,6 @@ var cors = require("cors");
 var bodyParser = require("body-parser");
 var server = require("http").createServer(app);
 const methodOverride = require("method-override");
-var HTTP_PORT = 2003;
 
 //BARD
 const { BardAPI } = require("bard-api-node");
@@ -42,8 +41,6 @@ app.use(async function (req, res, next) {
   await bard.setSession("__Secure-1PSID", process.env.BARD_COOKIE_KEY);
   res.bard = bard;
   req.bard = bard;
-  console.log("OK");
-  socketOn(io);
   next();
 });
 
@@ -55,33 +52,6 @@ var chatRoute = require("./app/chat/router.js");
 require("./db/index.js")(app);
 app.use("/auth", authRoute);
 app.use("/chat", chatRoute);
-app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Start server
-app.listen(HTTP_PORT, () => {
-  console.log("Server running on port %PORT%".replace("%PORT%", HTTP_PORT));
-});
-
-function socketOn(io) {
-  console.log("SOCKET");
-  io.on("connection", function (socket) {
-    console.log("connection");
-    console.log(socket);
-
-    socket.on("CH01", function (from, msg) {
-      console.log("MSG", from, " saying ", msg);
-    });
-  });
-
-  io.on("connect_failed", function (err) {
-    console.log("Connection Failed");
-    console.log(err);
-  });
-  io.on("connect_error", (err) => {
-    console.log(err.message); // prints the message associated with the error
-  });
-  io.on("connect", function (data) {
-    // <-- this works
-    console.log("socket ON connect", data);
-  });
-}
+module.exports = { app, server };
