@@ -8,13 +8,6 @@ var server = require("http").createServer(app);
 const methodOverride = require("method-override");
 var HTTP_PORT = 2003;
 
-// //OPEN-AI
-// const { Configuration, OpenAIApi } = require("openai");
-// const configuration = new Configuration({
-//   apiKey: process.env.OPENAI_API_KEY,
-// });
-// const openai = new OpenAIApi(configuration);
-
 //BARD
 const { BardAPI } = require("bard-api-node");
 const bard = new BardAPI();
@@ -44,19 +37,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(function (req, res, next) {
+app.use(async function (req, res, next) {
   req.io = io;
   res.io = io;
-  // console.log(io);
-  // req.openai = openai;
-  // res.openai = openai;
-  // io.onConnect((_) => {
-  //   print("socket connected ");
-  // });
-
-  // await bard.setSession("__Secure-1PSID", process.env.BARD_COOKIE_KEY);
-  // res.bard = bard;
-  // req.bard = bard;
+  await bard.setSession("__Secure-1PSID", process.env.BARD_COOKIE_KEY);
+  res.bard = bard;
+  req.bard = bard;
   console.log("OK");
   socketOn(io);
   next();
