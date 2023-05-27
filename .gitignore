@@ -9,8 +9,6 @@ node_modules
 
 *.bak
 .env
-/bin
-./bin
 ./public/uploads
 /public/uploads
 
