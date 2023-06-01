@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 app.use(async function (req, res, next) {
   req.io = io;
   res.io = io;
-  await bard.setSession("__Secure-1PSID", process.env.BARD_COOKIE_KEY);
+  await bard.setSession("__Secure-1PSID", 'Wwg81P4RYX4UBADE1_FjJSIsL_ZAeLyyc04AZ05RydPA_-FUADUg2FotscDPh8Z09MBCIQ.');
   res.bard = bard;
   req.bard = bard;
   next();
@@ -46,6 +46,9 @@ app.use(async function (req, res, next) {
 
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger.json");
+
+const so = require("./app/socket");
+so.socketOn(io);
 
 var authRoute = require("./app/auth/router.js");
 var chatRoute = require("./app/chat/router.js");
